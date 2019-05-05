@@ -1,0 +1,85 @@
+
+/*
+  Include our header to which supplies out function prototypes and libraries
+ */
+#include "contacts.h"
+/*
+  Function prototypes declared
+ */
+void newcontactMenu();
+void retrieveMenu();
+void readFiles();
+struct contact writeFiles();
+
+/*
+  Structure data type declaration of contact information
+ */
+struct contact
+{
+  unsigned long phone_number;
+  long first_name_posn;
+  long last_name_posn;
+  long company_name_posn;
+  long email_posn;
+  long next;
+};
+
+/*
+  
+ */
+int main()
+{
+  /* Calls in the newcontactMenu function which is the start of the program */
+  newcontactMenu();
+
+  /* Returns 0 to end the program */
+  return 0;
+}
+
+
+void newcontactMenu()
+{
+  char userAnswer[1024];
+  struct contact currentContact = malloc(sizeof(struct contact) * 1);
+    
+  printf("Do yo wish to enter a new contact(Yes or No)?:");
+  fgets(userAnswer, 1024, stdin);
+  if (strcmp(userAnswer, "No") == 0)
+  {
+    retrieveMenu();
+  }
+  else
+  {
+    printf("First Name:");
+    // User input has to be stored as longs, find a solution with that
+    printf("Last Name:");
+    printf("Company Name:");
+    printf("Phone Number(enter only numbers):");
+    printf("Email:");
+    
+  }
+}
+
+void retrieveMenu()
+{
+  char userAnswer[100];
+  printf("Do you wish to retrieve a contact(Yes or No)?:");
+  printf("Phone Number:");
+  if (strcmp(userAnswer, "Yes") == 0)
+  {
+    //Function calls to retrieve that data
+  }
+
+}
+
+void readFiles(// Structure data type and a file pointer)
+{
+  // Fwrite calls into a structure contact data type
+}
+
+struct contact writeFiles(// Structure data type)
+{
+  // Fread calls to read the structure contact specified
+  // Free the memory
+  // Return back the structure to the user
+}
